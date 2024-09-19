@@ -11,12 +11,21 @@
 
 /*animaciones*/
 @keyframes slide {
-    0%{transform: translateY(-100%);
+    0% {
+        transform: translateY(-100%);
 
     }
 }
-@keyframes slide1 { 
-    0%{transform: translateY(+100%);}
+
+@keyframes slide1 {
+    0% {
+        opacity: 15px;
+    
+    }
+    100%
+    {
+        opacity: 15px;
+    }
 }
 
 /*estilos globales*/
@@ -33,7 +42,9 @@ a {
 }
 
 /*body*/
-body {}
+body {
+    padding-top: 100px;
+}
 
 
 /*header*/
@@ -44,6 +55,8 @@ header {
     z-index: 2;
     position: fixed;
     width: 100%;
+    height: 100px;
+    top: 0;
 }
 
 .header_top {
@@ -53,6 +66,7 @@ header {
     background-color: bisque;
     z-index: 2;
     padding: 0 15px;
+    box-shadow: black 0 0 15px;
 }
 
 .logo {
@@ -76,14 +90,16 @@ header {
     gap: 30px;
     width: 50%;
     border-radius: 0px 0 0px 20px;
-    animation: slide 2s ;
+    animation: slide 2s;
     z-index: -1;
 }
+
 .navbar a {
     color: white;
     position: relative;
 }
-.navbar a:hover:before{
+
+.navbar a:hover:before {
     content: " ";
     height: 2px;
     background-color: black;
@@ -91,17 +107,93 @@ header {
     position: absolute;
     bottom: 0;
 }
-#menu{
+
+#menu {
     display: none;
 }
 
-.checkboxx:checked ~ .navbar {
+.checkboxx:checked~.navbar {
     display: flex;
     animation: slide1 2s;
 }
-/* .checkboxx:unch {
-    display: flex;
-    animation: slide1 2s;
-}
-*/ 
 
+
+/*intro*/
+
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(https://www.usatoday.com/gcdn/media/2018/07/31/USATODAY/usatsports/247WallSt.com-247WS-482802-restaurant.jpg?crop=1365,768,x0,y0&width=1365&height=768&format=pjpg&auto=webp) no-repeat center fixed;
+    background-size: cover;
+    height: 40vh;
+    }
+.intro h1 {
+    width: 70%;
+    text-align: center;
+    text-shadow: 0 0 15px rgb(185, 173, 6);
+    font-size: 4rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    background-color: rgba(0, 0, 0, 0.459);
+    color: white;
+    animation: slide1 2s;
+}
+/* catalogo */ 
+.catalogo{
+    display: flex;
+    flex-flow: wrap;
+    justify-content: center;
+    gap: 20px 30px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+/*card*/
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 250px;
+    width: 200px;
+    background-color: bisque;
+    border-radius: 15px 15px 15px 15px;
+    padding: 20px;
+}
+.card_img{
+    width: 100%;
+    height: 60%;
+}
+.card strong{
+    padding: 10px 0;
+    text-align: center;
+    background-color: rgb(123, 172, 33);
+}
+.card_descrip{
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 0 10px;
+flex: 1;
+color: rgb(185, 178, 178);
+
+}
+.card_descrip button{
+    
+    background: transparent;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px 10px;
+    color: rgb(187, 7, 7);
+    font-size: large;
+    
+}
+.card_descrip button:hover{
+    background: green;
+    transition: 2s;
+    cursor: pointer;
+}
