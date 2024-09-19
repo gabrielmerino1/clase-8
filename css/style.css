@@ -1,7 +1,107 @@
+/*imports*/
 
-
-*{
+/*normalize*/
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
+/*variables*/
+
+/*animaciones*/
+@keyframes slide {
+    0%{transform: translateY(-100%);
+
+    }
+}
+@keyframes slide1 { 
+    0%{transform: translateY(+100%);}
+}
+
+/*estilos globales*/
+
+
+:root {
+    /*variables*/
+    --text-color-primary: black;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color-primary)
+}
+
+/*body*/
+body {}
+
+
+/*header*/
+header {
+
+    display: flex;
+    flex-flow: column;
+    z-index: 2;
+    position: fixed;
+    width: 100%;
+}
+
+.header_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: bisque;
+    z-index: 2;
+    padding: 0 15px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
+
+.label_menu i {
+    font-size: 32px;
+}
+
+.navbar {
+    background-color: rgb(228, 98, 75);
+    padding: 25px 20px;
+    display: none;
+    /*aca se "oculta"*/
+    flex-flow: column;
+    align-items: flex-end;
+    justify-content: center;
+    align-self: flex-end;
+    gap: 30px;
+    width: 50%;
+    border-radius: 0px 0 0px 20px;
+    animation: slide 2s ;
+    z-index: -1;
+}
+.navbar a {
+    color: white;
+    position: relative;
+}
+.navbar a:hover:before{
+    content: " ";
+    height: 2px;
+    background-color: black;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+#menu{
+    display: none;
+}
+
+.checkboxx:checked ~ .navbar {
+    display: flex;
+    animation: slide1 2s;
+}
+/* .checkboxx:unch {
+    display: flex;
+    animation: slide1 2s;
+}
+*/ 
+
